@@ -1,0 +1,727 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+Loading personal and system profiles took 2550ms.
+(base) PS C:\ScottDocs\Codes\chinese-GPT2-start-from-zero> python train.py  --model_config config/model_config_small.json --tokenized_data_path data/tokenized/ --tokenizer_path cache/vocab_small.txt --raw_data_path data/train.json --epochs 15 --batch_size 2 --log_step 200 --stride 512 --gradient_accumulation 4 --output_dir model/ --device 0,1 --num_pieces 100 --raw                   
+args:
+Namespace(device='0,1', model_config='config/model_config_small.json', tokenizer_path='cache/vocab_small.txt', raw_data_path='data/train.json', tokenized_data_path='data/tokenized/', raw=True, epochs=15, batch_size=2, lr=0.00015, warmup_steps=2000, log_step=200, stride=512, gradient_accumulation=4, fp16=False, fp16_opt_level='O1', max_grad_norm=1.0, num_pieces=100, min_length=128, output_dir='model/', pretrained_model='', writer_dir='tensorboard_summary/', segment=False, bpe_token=False, encoder_json='tokenizations/encoder.json', vocab_bpe='tokenizations/vocab.bpe')
+config:
+{
+  "attn_pdrop": 0.1,
+  "embd_pdrop": 0.1,
+  "finetuning_task": null,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 10,
+  "n_positions": 1024,
+  "num_labels": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 13317
+}
+
+using device: cuda
+building files
+reading lines
+  0%|                                                                                                                                             | 0/100 [00:00<?, ?it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (7337958 > 999999). Running this sequence through the model will result in indexing errors
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:15<00:00,  6.31it/s]
+finish
+files built
+number of parameters: 81894144
+calculating total steps
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 135.40it/s]
+total steps = 26872
+starting training
+epoch 1
+time: 2025-09-21 23:17:14.519333
+C:\Users\keer_\anaconda3\Lib\site-packages\transformers\optimization.py:166: UserWarning: This overload of add_ is deprecated:
+        add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+        add_(Tensor other, *, Number alpha = 1) (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\python_arg_parser.cpp:1691.)
+  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
+now time: 23:18. Step 200 of piece 25 of epoch 1, loss 9.29712432861328
+now time: 23:19. Step 400 of piece 25 of epoch 1, loss 8.349399833679199
+now time: 23:20. Step 600 of piece 25 of epoch 1, loss 7.808444309234619
+now time: 23:21. Step 800 of piece 25 of epoch 1, loss 7.221032485961914
+now time: 23:23. Step 1000 of piece 25 of epoch 1, loss 6.584845609664917
+now time: 23:24. Step 1200 of piece 25 of epoch 1, loss 6.146992158889771
+now time: 23:25. Step 1400 of piece 25 of epoch 1, loss 5.829341669082641
+now time: 23:26. Step 1600 of piece 25 of epoch 1, loss 5.628546695709229
+now time: 23:28. Step 1800 of piece 25 of epoch 1, loss 5.417766838073731
+now time: 23:29. Step 2000 of piece 25 of epoch 1, loss 5.313201522827148
+now time: 23:30. Step 2200 of piece 25 of epoch 1, loss 5.166201200485229
+now time: 23:31. Step 2400 of piece 25 of epoch 1, loss 5.0141652488708495
+now time: 23:33. Step 2600 of piece 25 of epoch 1, loss 4.947611951828003
+now time: 23:34. Step 2800 of piece 25 of epoch 1, loss 4.8920509719848635
+now time: 23:35. Step 3000 of piece 25 of epoch 1, loss 4.820839786529541
+now time: 23:36. Step 3200 of piece 25 of epoch 1, loss 4.758223819732666
+now time: 23:37. Step 3400 of piece 25 of epoch 1, loss 4.6701317977905275
+now time: 23:39. Step 3600 of piece 25 of epoch 1, loss 4.632548370361328
+now time: 23:40. Step 3800 of piece 25 of epoch 1, loss 4.564283723831177
+now time: 23:41. Step 4000 of piece 25 of epoch 1, loss 4.543502969741821
+now time: 23:42. Step 4200 of piece 25 of epoch 1, loss 4.466888484954834
+now time: 23:44. Step 4400 of piece 25 of epoch 1, loss 4.467313985824585
+now time: 23:45. Step 4600 of piece 25 of epoch 1, loss 4.460652780532837
+now time: 23:46. Step 4800 of piece 25 of epoch 1, loss 4.438513841629028
+now time: 23:47. Step 5000 of piece 25 of epoch 1, loss 4.415385980606079
+now time: 23:49. Step 5200 of piece 25 of epoch 1, loss 4.392811708450317
+now time: 23:50. Step 5400 of piece 25 of epoch 1, loss 4.347072496414184
+now time: 23:51. Step 5600 of piece 25 of epoch 1, loss 4.321975755691528
+now time: 23:52. Step 5800 of piece 25 of epoch 1, loss 4.329446544647217
+now time: 23:54. Step 6000 of piece 25 of epoch 1, loss 4.276753921508789
+now time: 23:55. Step 6200 of piece 25 of epoch 1, loss 4.236352314949036
+now time: 23:56. Step 6400 of piece 25 of epoch 1, loss 4.219977741241455
+now time: 23:57. Step 6600 of piece 25 of epoch 1, loss 4.21162700176239
+now time: 23:59. Step 6800 of piece 25 of epoch 1, loss 4.1798384428024296
+now time: 0:0. Step 7000 of piece 25 of epoch 1, loss 4.161018681526184
+saving model for epoch 1
+epoch 1 finished
+time: 2025-09-22 00:01:20.313345
+time for one epoch: 0:44:05.794012
+epoch 2
+time: 2025-09-22 00:01:20.313624
+now time: 0:1. Step 35 of piece 91 of epoch 2, loss 4.17292911529541
+now time: 0:2. Step 235 of piece 91 of epoch 2, loss 4.106170129776001
+now time: 0:4. Step 435 of piece 91 of epoch 2, loss 4.088968229293823
+now time: 0:5. Step 635 of piece 91 of epoch 2, loss 4.048807277679443
+now time: 0:6. Step 835 of piece 91 of epoch 2, loss 4.040364856719971
+now time: 0:7. Step 1035 of piece 91 of epoch 2, loss 3.9940431928634643
+now time: 0:9. Step 1235 of piece 91 of epoch 2, loss 3.980230898857117
+now time: 0:10. Step 1435 of piece 91 of epoch 2, loss 3.9097905111312867
+now time: 0:11. Step 1635 of piece 91 of epoch 2, loss 3.89304817199707
+now time: 0:13. Step 1835 of piece 91 of epoch 2, loss 3.8692498779296876
+now time: 0:14. Step 2035 of piece 91 of epoch 2, loss 3.862152953147888
+now time: 0:15. Step 2235 of piece 91 of epoch 2, loss 3.841312036514282
+now time: 0:16. Step 2435 of piece 91 of epoch 2, loss 3.7667193603515625
+now time: 0:18. Step 2635 of piece 91 of epoch 2, loss 3.723843379020691
+now time: 0:19. Step 2835 of piece 91 of epoch 2, loss 3.7450798845291136
+now time: 0:20. Step 3035 of piece 91 of epoch 2, loss 3.7149269485473635
+now time: 0:22. Step 3235 of piece 91 of epoch 2, loss 3.684777145385742
+now time: 0:23. Step 3435 of piece 91 of epoch 2, loss 3.6706024503707884
+now time: 0:24. Step 3635 of piece 91 of epoch 2, loss 3.6721526432037352
+now time: 0:25. Step 3835 of piece 91 of epoch 2, loss 3.5687911128997802
+now time: 0:26. Step 4035 of piece 91 of epoch 2, loss 3.538803262710571
+now time: 0:28. Step 4235 of piece 91 of epoch 2, loss 3.5584793090820312
+now time: 0:29. Step 4435 of piece 91 of epoch 2, loss 3.561871123313904
+now time: 0:30. Step 4635 of piece 91 of epoch 2, loss 3.5432767248153687
+now time: 0:31. Step 4835 of piece 91 of epoch 2, loss 3.5121718645095825
+now time: 0:33. Step 5035 of piece 91 of epoch 2, loss 3.466740312576294
+now time: 0:34. Step 5235 of piece 91 of epoch 2, loss 3.4191432332992555
+now time: 0:35. Step 5435 of piece 91 of epoch 2, loss 3.5050772047042846
+now time: 0:36. Step 5635 of piece 91 of epoch 2, loss 3.4136283874511717
+now time: 0:38. Step 5835 of piece 91 of epoch 2, loss 3.451533613204956
+now time: 0:39. Step 6035 of piece 91 of epoch 2, loss 3.3929678106307986
+now time: 0:40. Step 6235 of piece 91 of epoch 2, loss 3.3641008043289187
+now time: 0:41. Step 6435 of piece 91 of epoch 2, loss 3.316913375854492
+now time: 0:43. Step 6635 of piece 91 of epoch 2, loss 3.2953061771392824
+now time: 0:44. Step 6835 of piece 91 of epoch 2, loss 3.2812997484207154
+now time: 0:45. Step 7035 of piece 91 of epoch 2, loss 3.251584429740906
+saving model for epoch 2
+epoch 2 finished
+time: 2025-09-22 00:46:21.049532
+time for one epoch: 0:45:00.735908
+epoch 3
+time: 2025-09-22 00:46:21.049699
+now time: 0:46. Step 70 of piece 56 of epoch 3, loss 3.1980015087127684
+now time: 0:48. Step 270 of piece 56 of epoch 3, loss 3.1370540618896485
+now time: 0:49. Step 470 of piece 56 of epoch 3, loss 3.2325806474685668
+now time: 0:50. Step 670 of piece 56 of epoch 3, loss 3.1561257314682005
+now time: 0:51. Step 870 of piece 56 of epoch 3, loss 3.1654625511169434
+now time: 0:53. Step 1070 of piece 56 of epoch 3, loss 3.164146842956543
+now time: 0:54. Step 1270 of piece 56 of epoch 3, loss 3.165877332687378
+now time: 0:55. Step 1470 of piece 56 of epoch 3, loss 3.122863144874573
+now time: 0:56. Step 1670 of piece 56 of epoch 3, loss 3.121625714302063
+now time: 0:57. Step 1870 of piece 56 of epoch 3, loss 3.1274317932128906
+now time: 0:59. Step 2070 of piece 56 of epoch 3, loss 3.140605764389038
+now time: 1:0. Step 2270 of piece 56 of epoch 3, loss 3.0682807874679567
+now time: 1:1. Step 2470 of piece 56 of epoch 3, loss 3.114989399909973
+now time: 1:2. Step 2670 of piece 56 of epoch 3, loss 3.067134919166565
+now time: 1:4. Step 2870 of piece 56 of epoch 3, loss 3.095681028366089
+now time: 1:5. Step 3070 of piece 56 of epoch 3, loss 3.0409296321868897
+now time: 1:6. Step 3270 of piece 56 of epoch 3, loss 3.069999308586121
+now time: 1:7. Step 3470 of piece 56 of epoch 3, loss 3.0383620929718016
+now time: 1:9. Step 3670 of piece 56 of epoch 3, loss 2.9960373544692995
+now time: 1:10. Step 3870 of piece 56 of epoch 3, loss 2.986561894416809
+now time: 1:11. Step 4070 of piece 56 of epoch 3, loss 2.986515188217163
+now time: 1:12. Step 4270 of piece 56 of epoch 3, loss 3.0450122356414795
+now time: 1:14. Step 4470 of piece 56 of epoch 3, loss 3.0147619676589965
+now time: 1:15. Step 4670 of piece 56 of epoch 3, loss 2.971938900947571
+now time: 1:16. Step 4870 of piece 56 of epoch 3, loss 3.001028575897217
+now time: 1:17. Step 5070 of piece 56 of epoch 3, loss 2.9983101367950438
+now time: 1:19. Step 5270 of piece 56 of epoch 3, loss 2.9484457397460937
+now time: 1:20. Step 5470 of piece 56 of epoch 3, loss 2.9468840885162355
+now time: 1:21. Step 5670 of piece 56 of epoch 3, loss 2.968404521942139
+now time: 1:22. Step 5870 of piece 56 of epoch 3, loss 2.9293260288238527
+now time: 1:24. Step 6070 of piece 56 of epoch 3, loss 3.000564904212952
+now time: 1:25. Step 6270 of piece 56 of epoch 3, loss 2.899775071144104
+now time: 1:26. Step 6470 of piece 56 of epoch 3, loss 2.88844820022583
+now time: 1:27. Step 6670 of piece 56 of epoch 3, loss 2.886928095817566
+now time: 1:29. Step 6870 of piece 56 of epoch 3, loss 2.8530563497543335
+now time: 1:30. Step 7070 of piece 56 of epoch 3, loss 2.8756702661514284
+saving model for epoch 3
+epoch 3 finished
+time: 2025-09-22 01:30:52.084021
+time for one epoch: 0:44:31.034322
+epoch 4
+time: 2025-09-22 01:30:52.084209
+now time: 1:31. Step 105 of piece 15 of epoch 4, loss 2.898459348678589
+now time: 1:32. Step 305 of piece 15 of epoch 4, loss 2.790493712425232
+now time: 1:33. Step 505 of piece 15 of epoch 4, loss 2.7567019510269164
+now time: 1:35. Step 705 of piece 15 of epoch 4, loss 2.807468671798706
+now time: 1:36. Step 905 of piece 15 of epoch 4, loss 2.7831634092330932
+now time: 1:37. Step 1105 of piece 15 of epoch 4, loss 2.7738090705871583
+now time: 1:38. Step 1305 of piece 15 of epoch 4, loss 2.774262466430664
+now time: 1:39. Step 1505 of piece 15 of epoch 4, loss 2.768856530189514
+now time: 1:40. Step 1705 of piece 15 of epoch 4, loss 2.820893726348877
+now time: 1:42. Step 1905 of piece 15 of epoch 4, loss 2.7641626262664794
+now time: 1:43. Step 2105 of piece 15 of epoch 4, loss 2.7401254987716674
+now time: 1:44. Step 2305 of piece 15 of epoch 4, loss 2.7342182779312134
+now time: 1:45. Step 2505 of piece 15 of epoch 4, loss 2.795472002029419
+now time: 1:46. Step 2705 of piece 15 of epoch 4, loss 2.75235258102417
+now time: 1:47. Step 2905 of piece 15 of epoch 4, loss 2.7618655252456663
+now time: 1:48. Step 3105 of piece 15 of epoch 4, loss 2.753400559425354
+now time: 1:50. Step 3305 of piece 15 of epoch 4, loss 2.7250367784500122
+now time: 1:51. Step 3505 of piece 15 of epoch 4, loss 2.7297436141967775
+now time: 1:52. Step 3705 of piece 15 of epoch 4, loss 2.7302979230880737
+now time: 1:53. Step 3905 of piece 15 of epoch 4, loss 2.73322970867157
+now time: 1:54. Step 4105 of piece 15 of epoch 4, loss 2.738028655052185
+now time: 1:55. Step 4305 of piece 15 of epoch 4, loss 2.7676734590530394
+now time: 1:57. Step 4505 of piece 15 of epoch 4, loss 2.7089531803131104
+now time: 1:58. Step 4705 of piece 15 of epoch 4, loss 2.718200097084045
+now time: 1:59. Step 4905 of piece 15 of epoch 4, loss 2.6802474594116212
+now time: 2:0. Step 5105 of piece 15 of epoch 4, loss 2.7567108774185183
+now time: 2:1. Step 5305 of piece 15 of epoch 4, loss 2.65470148563385
+now time: 2:2. Step 5505 of piece 15 of epoch 4, loss 2.711328821182251
+now time: 2:4. Step 5705 of piece 15 of epoch 4, loss 2.6592882680892944
+now time: 2:5. Step 5905 of piece 15 of epoch 4, loss 2.637072649002075
+now time: 2:6. Step 6105 of piece 15 of epoch 4, loss 2.6956942176818846
+now time: 2:7. Step 6305 of piece 15 of epoch 4, loss 2.643689064979553
+now time: 2:8. Step 6505 of piece 15 of epoch 4, loss 2.6736647653579713
+now time: 2:9. Step 6705 of piece 15 of epoch 4, loss 2.6430411100387574
+now time: 2:10. Step 6905 of piece 15 of epoch 4, loss 2.688037090301514
+now time: 2:12. Step 7105 of piece 15 of epoch 4, loss 2.692141962051392
+saving model for epoch 4
+epoch 4 finished
+time: 2025-09-22 02:12:29.057313
+time for one epoch: 0:41:36.973104
+epoch 5
+time: 2025-09-22 02:12:29.057606
+now time: 2:13. Step 140 of piece 98 of epoch 5, loss 2.575018787384033
+now time: 2:14. Step 340 of piece 98 of epoch 5, loss 2.559370126724243
+now time: 2:15. Step 540 of piece 98 of epoch 5, loss 2.585596513748169
+now time: 2:16. Step 740 of piece 98 of epoch 5, loss 2.5408100700378418
+now time: 2:17. Step 940 of piece 98 of epoch 5, loss 2.522181525230408
+now time: 2:19. Step 1140 of piece 98 of epoch 5, loss 2.541766004562378
+now time: 2:20. Step 1340 of piece 98 of epoch 5, loss 2.5848902368545534
+now time: 2:21. Step 1540 of piece 98 of epoch 5, loss 2.5603002738952636
+now time: 2:22. Step 1740 of piece 98 of epoch 5, loss 2.5045528030395507
+now time: 2:23. Step 1940 of piece 98 of epoch 5, loss 2.5272588396072386
+now time: 2:24. Step 2140 of piece 98 of epoch 5, loss 2.5505162382125857
+now time: 2:26. Step 2340 of piece 98 of epoch 5, loss 2.5003868389129638
+now time: 2:27. Step 2540 of piece 98 of epoch 5, loss 2.5659935092926025
+now time: 2:28. Step 2740 of piece 98 of epoch 5, loss 2.557917332649231
+now time: 2:29. Step 2940 of piece 98 of epoch 5, loss 2.537709827423096
+now time: 2:30. Step 3140 of piece 98 of epoch 5, loss 2.5283870983123777
+now time: 2:31. Step 3340 of piece 98 of epoch 5, loss 2.539954776763916
+now time: 2:33. Step 3540 of piece 98 of epoch 5, loss 2.546256432533264
+now time: 2:34. Step 3740 of piece 98 of epoch 5, loss 2.531345844268799
+now time: 2:35. Step 3940 of piece 98 of epoch 5, loss 2.5187432670593264
+now time: 2:36. Step 4140 of piece 98 of epoch 5, loss 2.542005081176758
+now time: 2:37. Step 4340 of piece 98 of epoch 5, loss 2.550339436531067
+now time: 2:38. Step 4540 of piece 98 of epoch 5, loss 2.52527467250824
+now time: 2:40. Step 4740 of piece 98 of epoch 5, loss 2.4750167322158814
+now time: 2:41. Step 4940 of piece 98 of epoch 5, loss 2.4846853590011597
+now time: 2:42. Step 5140 of piece 98 of epoch 5, loss 2.484034094810486
+now time: 2:43. Step 5340 of piece 98 of epoch 5, loss 2.515817403793335
+now time: 2:44. Step 5540 of piece 98 of epoch 5, loss 2.5163249254226683
+now time: 2:45. Step 5740 of piece 98 of epoch 5, loss 2.5382272148132325
+now time: 2:46. Step 5940 of piece 98 of epoch 5, loss 2.5250687551498414
+now time: 2:48. Step 6140 of piece 98 of epoch 5, loss 2.4907416248321534
+now time: 2:49. Step 6340 of piece 98 of epoch 5, loss 2.4795232009887695
+now time: 2:50. Step 6540 of piece 98 of epoch 5, loss 2.4924455213546755
+now time: 2:51. Step 6740 of piece 98 of epoch 5, loss 2.4990979623794556
+now time: 2:52. Step 6940 of piece 98 of epoch 5, loss 2.478949646949768
+now time: 2:53. Step 7140 of piece 98 of epoch 5, loss 2.4714649152755737
+saving model for epoch 5
+epoch 5 finished
+time: 2025-09-22 02:54:05.722854
+time for one epoch: 0:41:36.665248
+epoch 6
+time: 2025-09-22 02:54:05.723222
+now time: 2:55. Step 175 of piece 97 of epoch 6, loss 2.3864210844039917
+now time: 2:56. Step 375 of piece 97 of epoch 6, loss 2.386348612308502
+now time: 2:57. Step 575 of piece 97 of epoch 6, loss 2.3383159041404724
+now time: 2:58. Step 775 of piece 97 of epoch 6, loss 2.3999822664260866
+now time: 2:59. Step 975 of piece 97 of epoch 6, loss 2.3859404134750366
+now time: 3:0. Step 1175 of piece 97 of epoch 6, loss 2.320336329936981
+now time: 3:2. Step 1375 of piece 97 of epoch 6, loss 2.3868969774246214
+now time: 3:3. Step 1575 of piece 97 of epoch 6, loss 2.3262360000610354
+now time: 3:4. Step 1775 of piece 97 of epoch 6, loss 2.3670456504821775
+now time: 3:5. Step 1975 of piece 97 of epoch 6, loss 2.3865945100784303
+now time: 3:6. Step 2175 of piece 97 of epoch 6, loss 2.314093096256256
+now time: 3:7. Step 2375 of piece 97 of epoch 6, loss 2.384864730834961
+now time: 3:9. Step 2575 of piece 97 of epoch 6, loss 2.3239023160934447
+now time: 3:10. Step 2775 of piece 97 of epoch 6, loss 2.3320097851753236
+now time: 3:11. Step 2975 of piece 97 of epoch 6, loss 2.33658730506897
+now time: 3:12. Step 3175 of piece 97 of epoch 6, loss 2.4211389112472532
+now time: 3:13. Step 3375 of piece 97 of epoch 6, loss 2.3779500675201417
+now time: 3:14. Step 3575 of piece 97 of epoch 6, loss 2.3718209648132325
+now time: 3:16. Step 3775 of piece 97 of epoch 6, loss 2.3900058460235596
+now time: 3:17. Step 3975 of piece 97 of epoch 6, loss 2.3326479101181032
+now time: 3:18. Step 4175 of piece 97 of epoch 6, loss 2.3825132417678834
+now time: 3:19. Step 4375 of piece 97 of epoch 6, loss 2.388315269947052
+now time: 3:20. Step 4575 of piece 97 of epoch 6, loss 2.2891942644119263
+now time: 3:21. Step 4775 of piece 97 of epoch 6, loss 2.3611238980293274
+now time: 3:23. Step 4975 of piece 97 of epoch 6, loss 2.3568434953689574
+now time: 3:24. Step 5175 of piece 97 of epoch 6, loss 2.34536860704422
+now time: 3:25. Step 5375 of piece 97 of epoch 6, loss 2.360632004737854
+now time: 3:26. Step 5575 of piece 97 of epoch 6, loss 2.3637020874023436
+now time: 3:27. Step 5775 of piece 97 of epoch 6, loss 2.326459288597107
+now time: 3:28. Step 5975 of piece 97 of epoch 6, loss 2.3473157358169554
+now time: 3:30. Step 6175 of piece 97 of epoch 6, loss 2.3543033695220945
+now time: 3:31. Step 6375 of piece 97 of epoch 6, loss 2.3221429204940796
+now time: 3:32. Step 6575 of piece 97 of epoch 6, loss 2.3642010736465453
+now time: 3:33. Step 6775 of piece 97 of epoch 6, loss 2.3225457954406736
+now time: 3:34. Step 6975 of piece 97 of epoch 6, loss 2.3229262733459475
+saving model for epoch 6
+epoch 6 finished
+time: 2025-09-22 03:35:52.098527
+time for one epoch: 0:41:46.375305
+epoch 7
+time: 2025-09-22 03:35:52.098882
+now time: 3:35. Step 10 of piece 42 of epoch 7, loss 2.273599617481232
+now time: 3:37. Step 210 of piece 42 of epoch 7, loss 2.2079199147224426
+now time: 3:38. Step 410 of piece 42 of epoch 7, loss 2.222939879894257
+now time: 3:39. Step 610 of piece 42 of epoch 7, loss 2.2471586656570435
+now time: 3:40. Step 810 of piece 42 of epoch 7, loss 2.228359146118164
+now time: 3:41. Step 1010 of piece 42 of epoch 7, loss 2.22966029882431
+now time: 3:42. Step 1210 of piece 42 of epoch 7, loss 2.205188148021698
+now time: 3:44. Step 1410 of piece 42 of epoch 7, loss 2.256601781845093
+now time: 3:45. Step 1610 of piece 42 of epoch 7, loss 2.203883612155914
+now time: 3:46. Step 1810 of piece 42 of epoch 7, loss 2.2215171885490417
+now time: 3:47. Step 2010 of piece 42 of epoch 7, loss 2.2057983469963074
+now time: 3:48. Step 2210 of piece 42 of epoch 7, loss 2.2445237588882447
+now time: 3:49. Step 2410 of piece 42 of epoch 7, loss 2.1656901025772095
+now time: 3:51. Step 2610 of piece 42 of epoch 7, loss 2.2142548775672912
+now time: 3:52. Step 2810 of piece 42 of epoch 7, loss 2.152404546737671
+now time: 3:53. Step 3010 of piece 42 of epoch 7, loss 2.239017417430878
+now time: 3:54. Step 3210 of piece 42 of epoch 7, loss 2.2022725772857665
+now time: 3:55. Step 3410 of piece 42 of epoch 7, loss 2.1972941613197325
+now time: 3:56. Step 3610 of piece 42 of epoch 7, loss 2.2273224353790284
+now time: 3:58. Step 3810 of piece 42 of epoch 7, loss 2.207049572467804
+now time: 3:59. Step 4010 of piece 42 of epoch 7, loss 2.2072023367881775
+now time: 4:0. Step 4210 of piece 42 of epoch 7, loss 2.21752934217453
+now time: 4:1. Step 4410 of piece 42 of epoch 7, loss 2.2230993413925173
+now time: 4:2. Step 4610 of piece 42 of epoch 7, loss 2.1903405237197875
+now time: 4:4. Step 4810 of piece 42 of epoch 7, loss 2.239139540195465
+now time: 4:5. Step 5010 of piece 42 of epoch 7, loss 2.2076478362083436
+now time: 4:6. Step 5210 of piece 42 of epoch 7, loss 2.1956352543830873
+now time: 4:7. Step 5410 of piece 42 of epoch 7, loss 2.208689548969269
+now time: 4:8. Step 5610 of piece 42 of epoch 7, loss 2.197307012081146
+now time: 4:9. Step 5810 of piece 42 of epoch 7, loss 2.2004138445854187
+now time: 4:11. Step 6010 of piece 42 of epoch 7, loss 2.2209095215797423
+now time: 4:12. Step 6210 of piece 42 of epoch 7, loss 2.2103375816345214
+now time: 4:13. Step 6410 of piece 42 of epoch 7, loss 2.1709050130844116
+now time: 4:14. Step 6610 of piece 42 of epoch 7, loss 2.177763593196869
+now time: 4:15. Step 6810 of piece 42 of epoch 7, loss 2.2336912298202516
+now time: 4:16. Step 7010 of piece 42 of epoch 7, loss 2.2033919739723205
+saving model for epoch 7
+epoch 7 finished
+time: 2025-09-22 04:17:50.333315
+time for one epoch: 0:41:58.234433
+epoch 8
+time: 2025-09-22 04:17:50.333782
+now time: 4:18. Step 45 of piece 54 of epoch 8, loss 2.1559551191329955
+now time: 4:19. Step 245 of piece 54 of epoch 8, loss 2.05012122631073
+now time: 4:20. Step 445 of piece 54 of epoch 8, loss 2.0392625904083252
+now time: 4:21. Step 645 of piece 54 of epoch 8, loss 2.07425311088562
+now time: 4:22. Step 845 of piece 54 of epoch 8, loss 2.0843923544883727
+now time: 4:23. Step 1045 of piece 54 of epoch 8, loss 2.053859179019928
+now time: 4:25. Step 1245 of piece 54 of epoch 8, loss 2.0734354996681215
+now time: 4:26. Step 1445 of piece 54 of epoch 8, loss 2.0757564020156862
+now time: 4:27. Step 1645 of piece 54 of epoch 8, loss 2.0993854856491088
+now time: 4:28. Step 1845 of piece 54 of epoch 8, loss 2.0750476837158205
+now time: 4:29. Step 2045 of piece 54 of epoch 8, loss 2.0891406750679016
+now time: 4:31. Step 2245 of piece 54 of epoch 8, loss 2.058522403240204
+now time: 4:32. Step 2445 of piece 54 of epoch 8, loss 2.105788571834564
+now time: 4:33. Step 2645 of piece 54 of epoch 8, loss 2.0806071400642394
+now time: 4:34. Step 2845 of piece 54 of epoch 8, loss 2.050693311691284
+now time: 4:35. Step 3045 of piece 54 of epoch 8, loss 2.0560358810424804
+now time: 4:36. Step 3245 of piece 54 of epoch 8, loss 2.0743869757652282
+now time: 4:38. Step 3445 of piece 54 of epoch 8, loss 2.0956907963752744
+now time: 4:39. Step 3645 of piece 54 of epoch 8, loss 2.073012490272522
+now time: 4:40. Step 3845 of piece 54 of epoch 8, loss 2.0616871738433837
+now time: 4:41. Step 4045 of piece 54 of epoch 8, loss 2.051517333984375
+now time: 4:42. Step 4245 of piece 54 of epoch 8, loss 2.075363965034485
+now time: 4:43. Step 4445 of piece 54 of epoch 8, loss 2.095767321586609
+now time: 4:45. Step 4645 of piece 54 of epoch 8, loss 2.0498188877105714
+now time: 4:46. Step 4845 of piece 54 of epoch 8, loss 2.032417268753052
+now time: 4:47. Step 5045 of piece 54 of epoch 8, loss 2.0791494369506838
+now time: 4:48. Step 5245 of piece 54 of epoch 8, loss 2.0999067735672
+now time: 4:49. Step 5445 of piece 54 of epoch 8, loss 2.0488391017913816
+now time: 4:50. Step 5645 of piece 54 of epoch 8, loss 2.1113377356529237
+now time: 4:52. Step 5845 of piece 54 of epoch 8, loss 2.081333692073822
+now time: 4:53. Step 6045 of piece 54 of epoch 8, loss 2.0940909790992737
+now time: 4:54. Step 6245 of piece 54 of epoch 8, loss 2.096381642818451
+now time: 4:55. Step 6445 of piece 54 of epoch 8, loss 2.0512796807289124
+now time: 4:56. Step 6645 of piece 54 of epoch 8, loss 2.0490442728996277
+now time: 4:57. Step 6845 of piece 54 of epoch 8, loss 2.043779718875885
+now time: 4:59. Step 7045 of piece 54 of epoch 8, loss 2.0853761982917787
+saving model for epoch 8
+epoch 8 finished
+time: 2025-09-22 04:59:46.755262
+time for one epoch: 0:41:56.421480
+epoch 9
+time: 2025-09-22 04:59:46.755583
+now time: 5:0. Step 80 of piece 40 of epoch 9, loss 2.0381934213638306
+now time: 5:1. Step 280 of piece 40 of epoch 9, loss 1.9796741318702697
+now time: 5:2. Step 480 of piece 40 of epoch 9, loss 1.9302552342414856
+now time: 5:3. Step 680 of piece 40 of epoch 9, loss 1.947794852256775
+now time: 5:4. Step 880 of piece 40 of epoch 9, loss 2.0154005479812622
+now time: 5:6. Step 1080 of piece 40 of epoch 9, loss 1.9391242599487304
+now time: 5:7. Step 1280 of piece 40 of epoch 9, loss 1.9589445114135742
+now time: 5:8. Step 1480 of piece 40 of epoch 9, loss 1.9694162368774415
+now time: 5:9. Step 1680 of piece 40 of epoch 9, loss 1.9525557351112366
+now time: 5:10. Step 1880 of piece 40 of epoch 9, loss 1.9390632367134095
+now time: 5:11. Step 2080 of piece 40 of epoch 9, loss 1.9570898199081421
+now time: 5:13. Step 2280 of piece 40 of epoch 9, loss 2.0097478652000427
+now time: 5:14. Step 2480 of piece 40 of epoch 9, loss 1.9766100883483886
+now time: 5:15. Step 2680 of piece 40 of epoch 9, loss 1.9517939567565918
+now time: 5:16. Step 2880 of piece 40 of epoch 9, loss 1.9782069063186645
+now time: 5:17. Step 3080 of piece 40 of epoch 9, loss 1.9567450737953187
+now time: 5:18. Step 3280 of piece 40 of epoch 9, loss 1.9698610973358155
+now time: 5:20. Step 3480 of piece 40 of epoch 9, loss 1.9776954174041748
+now time: 5:21. Step 3680 of piece 40 of epoch 9, loss 1.9584421062469481
+now time: 5:22. Step 3880 of piece 40 of epoch 9, loss 1.957047128677368
+now time: 5:23. Step 4080 of piece 40 of epoch 9, loss 1.928239552974701
+now time: 5:24. Step 4280 of piece 40 of epoch 9, loss 1.9944539713859557
+now time: 5:26. Step 4480 of piece 40 of epoch 9, loss 1.9579677295684814
+now time: 5:27. Step 4680 of piece 40 of epoch 9, loss 1.9618959856033324
+now time: 5:28. Step 4880 of piece 40 of epoch 9, loss 1.9508798336982727
+now time: 5:29. Step 5080 of piece 40 of epoch 9, loss 1.93371906042099
+now time: 5:30. Step 5280 of piece 40 of epoch 9, loss 1.963114981651306
+now time: 5:31. Step 5480 of piece 40 of epoch 9, loss 1.9664357256889344
+now time: 5:33. Step 5680 of piece 40 of epoch 9, loss 1.9506061148643494
+now time: 5:34. Step 5880 of piece 40 of epoch 9, loss 1.9569017314910888
+now time: 5:35. Step 6080 of piece 40 of epoch 9, loss 1.944485399723053
+now time: 5:36. Step 6280 of piece 40 of epoch 9, loss 1.9130919551849366
+now time: 5:37. Step 6480 of piece 40 of epoch 9, loss 1.9043230319023132
+now time: 5:38. Step 6680 of piece 40 of epoch 9, loss 1.921778974533081
+now time: 5:40. Step 6880 of piece 40 of epoch 9, loss 1.9490965032577514
+now time: 5:41. Step 7080 of piece 40 of epoch 9, loss 1.9714920473098756
+saving model for epoch 9
+epoch 9 finished
+time: 2025-09-22 05:41:43.324644
+time for one epoch: 0:41:56.569061
+epoch 10
+time: 2025-09-22 05:41:43.324953
+now time: 5:42. Step 115 of piece 77 of epoch 10, loss 1.863647105693817
+now time: 5:43. Step 315 of piece 77 of epoch 10, loss 1.8625678515434265
+now time: 5:44. Step 515 of piece 77 of epoch 10, loss 1.7929893374443053
+now time: 5:45. Step 715 of piece 77 of epoch 10, loss 1.8357101416587829
+now time: 5:47. Step 915 of piece 77 of epoch 10, loss 1.8610911464691162
+now time: 5:48. Step 1115 of piece 77 of epoch 10, loss 1.8588237643241883
+now time: 5:49. Step 1315 of piece 77 of epoch 10, loss 1.824755644798279
+now time: 5:50. Step 1515 of piece 77 of epoch 10, loss 1.812461771965027
+now time: 5:51. Step 1715 of piece 77 of epoch 10, loss 1.8404439210891723
+now time: 5:52. Step 1915 of piece 77 of epoch 10, loss 1.8538328075408936
+now time: 5:54. Step 2115 of piece 77 of epoch 10, loss 1.9080730557441712
+now time: 5:55. Step 2315 of piece 77 of epoch 10, loss 1.8108558106422423
+now time: 5:56. Step 2515 of piece 77 of epoch 10, loss 1.8670864033699035
+now time: 5:57. Step 2715 of piece 77 of epoch 10, loss 1.8512532138824462
+now time: 5:58. Step 2915 of piece 77 of epoch 10, loss 1.860023410320282
+now time: 5:59. Step 3115 of piece 77 of epoch 10, loss 1.8501780652999877
+now time: 6:1. Step 3315 of piece 77 of epoch 10, loss 1.8287918758392334
+now time: 6:2. Step 3515 of piece 77 of epoch 10, loss 1.8353916692733765
+now time: 6:3. Step 3715 of piece 77 of epoch 10, loss 1.8590066885948182
+now time: 6:4. Step 3915 of piece 77 of epoch 10, loss 1.8474436688423157
+now time: 6:5. Step 4115 of piece 77 of epoch 10, loss 1.8194611954689026
+now time: 6:6. Step 4315 of piece 77 of epoch 10, loss 1.8599246621131897
+now time: 6:8. Step 4515 of piece 77 of epoch 10, loss 1.8433969497680665
+now time: 6:9. Step 4715 of piece 77 of epoch 10, loss 1.8423300552368165
+now time: 6:10. Step 4915 of piece 77 of epoch 10, loss 1.8663601112365722
+now time: 6:11. Step 5115 of piece 77 of epoch 10, loss 1.8362090349197389
+now time: 6:12. Step 5315 of piece 77 of epoch 10, loss 1.8422472882270813
+now time: 6:13. Step 5515 of piece 77 of epoch 10, loss 1.80831303358078
+now time: 6:15. Step 5715 of piece 77 of epoch 10, loss 1.8181593608856201
+now time: 6:16. Step 5915 of piece 77 of epoch 10, loss 1.8494273257255553
+now time: 6:17. Step 6115 of piece 77 of epoch 10, loss 1.859407706260681
+now time: 6:18. Step 6315 of piece 77 of epoch 10, loss 1.832745487689972
+now time: 6:19. Step 6515 of piece 77 of epoch 10, loss 1.8618863582611085
+now time: 6:21. Step 6715 of piece 77 of epoch 10, loss 1.8086321830749512
+now time: 6:22. Step 6915 of piece 77 of epoch 10, loss 1.8173030018806458
+now time: 6:23. Step 7115 of piece 77 of epoch 10, loss 1.8602291822433472
+saving model for epoch 10
+epoch 10 finished
+time: 2025-09-22 06:23:38.809591
+time for one epoch: 0:41:55.484638
+epoch 11
+time: 2025-09-22 06:23:38.809921
+now time: 6:24. Step 150 of piece 54 of epoch 11, loss 1.711099967956543
+now time: 6:25. Step 350 of piece 54 of epoch 11, loss 1.7138639855384827
+now time: 6:26. Step 550 of piece 54 of epoch 11, loss 1.7328032183647155
+now time: 6:28. Step 750 of piece 54 of epoch 11, loss 1.7664026236534118
+now time: 6:29. Step 950 of piece 54 of epoch 11, loss 1.7281402564048767
+now time: 6:30. Step 1150 of piece 54 of epoch 11, loss 1.7398624682426453
+now time: 6:31. Step 1350 of piece 54 of epoch 11, loss 1.7566222715377808
+now time: 6:32. Step 1550 of piece 54 of epoch 11, loss 1.7036705803871155
+now time: 6:33. Step 1750 of piece 54 of epoch 11, loss 1.6913583207130432
+now time: 6:35. Step 1950 of piece 54 of epoch 11, loss 1.7443701767921447
+now time: 6:36. Step 2150 of piece 54 of epoch 11, loss 1.738888645172119
+now time: 6:37. Step 2350 of piece 54 of epoch 11, loss 1.7438188648223878
+now time: 6:38. Step 2550 of piece 54 of epoch 11, loss 1.749837234020233
+now time: 6:39. Step 2750 of piece 54 of epoch 11, loss 1.725091667175293
+now time: 6:40. Step 2950 of piece 54 of epoch 11, loss 1.7435727310180664
+now time: 6:42. Step 3150 of piece 54 of epoch 11, loss 1.7051279640197754
+now time: 6:43. Step 3350 of piece 54 of epoch 11, loss 1.803845045566559
+now time: 6:44. Step 3550 of piece 54 of epoch 11, loss 1.7339361500740051
+now time: 6:45. Step 3750 of piece 54 of epoch 11, loss 1.7259882760047913
+now time: 6:46. Step 3950 of piece 54 of epoch 11, loss 1.7558893394470214
+now time: 6:47. Step 4150 of piece 54 of epoch 11, loss 1.7411861419677734
+now time: 6:49. Step 4350 of piece 54 of epoch 11, loss 1.7292169427871704
+now time: 6:50. Step 4550 of piece 54 of epoch 11, loss 1.7325889921188355
+now time: 6:51. Step 4750 of piece 54 of epoch 11, loss 1.7668067955970763
+now time: 6:52. Step 4950 of piece 54 of epoch 11, loss 1.769580533504486
+now time: 6:53. Step 5150 of piece 54 of epoch 11, loss 1.7172713470458985
+now time: 6:54. Step 5350 of piece 54 of epoch 11, loss 1.7763888835906982
+now time: 6:56. Step 5550 of piece 54 of epoch 11, loss 1.7290996384620667
+now time: 6:57. Step 5750 of piece 54 of epoch 11, loss 1.7467558979988098
+now time: 6:58. Step 5950 of piece 54 of epoch 11, loss 1.7271087670326233
+now time: 6:59. Step 6150 of piece 54 of epoch 11, loss 1.711474051475525
+now time: 7:0. Step 6350 of piece 54 of epoch 11, loss 1.7782267093658448
+now time: 7:1. Step 6550 of piece 54 of epoch 11, loss 1.755437331199646
+now time: 7:3. Step 6750 of piece 54 of epoch 11, loss 1.7398924493789674
+now time: 7:4. Step 6950 of piece 54 of epoch 11, loss 1.7911097598075867
+now time: 7:5. Step 7150 of piece 54 of epoch 11, loss 1.7163496208190918
+saving model for epoch 11
+epoch 11 finished
+time: 2025-09-22 07:05:31.896102
+time for one epoch: 0:41:53.086181
+epoch 12
+time: 2025-09-22 07:05:31.896473
+now time: 7:6. Step 185 of piece 42 of epoch 12, loss 1.6264703178405762
+now time: 7:7. Step 385 of piece 42 of epoch 12, loss 1.6292597317695618
+now time: 7:8. Step 585 of piece 42 of epoch 12, loss 1.687662341594696
+now time: 7:10. Step 785 of piece 42 of epoch 12, loss 1.670868434906006
+now time: 7:11. Step 985 of piece 42 of epoch 12, loss 1.62682480096817
+now time: 7:12. Step 1185 of piece 42 of epoch 12, loss 1.6775216698646545
+now time: 7:13. Step 1385 of piece 42 of epoch 12, loss 1.650937786102295
+now time: 7:14. Step 1585 of piece 42 of epoch 12, loss 1.6378365230560303
+now time: 7:15. Step 1785 of piece 42 of epoch 12, loss 1.6337271785736085
+now time: 7:17. Step 1985 of piece 42 of epoch 12, loss 1.6447121143341064
+now time: 7:18. Step 2185 of piece 42 of epoch 12, loss 1.6654394841194153
+now time: 7:19. Step 2385 of piece 42 of epoch 12, loss 1.6786718130111695
+now time: 7:20. Step 2585 of piece 42 of epoch 12, loss 1.696644356250763
+now time: 7:21. Step 2785 of piece 42 of epoch 12, loss 1.6550615739822387
+now time: 7:22. Step 2985 of piece 42 of epoch 12, loss 1.64113032579422
+now time: 7:24. Step 3185 of piece 42 of epoch 12, loss 1.6508138918876647
+now time: 7:25. Step 3385 of piece 42 of epoch 12, loss 1.6851691198349
+now time: 7:26. Step 3585 of piece 42 of epoch 12, loss 1.5937985944747926
+now time: 7:27. Step 3785 of piece 42 of epoch 12, loss 1.631850016117096
+now time: 7:28. Step 3985 of piece 42 of epoch 12, loss 1.6603349375724792
+now time: 7:29. Step 4185 of piece 42 of epoch 12, loss 1.6533522772789002
+now time: 7:31. Step 4385 of piece 42 of epoch 12, loss 1.6098987436294556
+now time: 7:32. Step 4585 of piece 42 of epoch 12, loss 1.6553982067108155
+now time: 7:33. Step 4785 of piece 42 of epoch 12, loss 1.665816457271576
+now time: 7:34. Step 4985 of piece 42 of epoch 12, loss 1.6690533709526063
+now time: 7:35. Step 5185 of piece 42 of epoch 12, loss 1.6632644772529601
+now time: 7:36. Step 5385 of piece 42 of epoch 12, loss 1.6789029455184936
+now time: 7:38. Step 5585 of piece 42 of epoch 12, loss 1.616843158006668
+now time: 7:39. Step 5785 of piece 42 of epoch 12, loss 1.6762695908546448
+now time: 7:40. Step 5985 of piece 42 of epoch 12, loss 1.7038051438331605
+now time: 7:41. Step 6185 of piece 42 of epoch 12, loss 1.6256620872020722
+now time: 7:42. Step 6385 of piece 42 of epoch 12, loss 1.6525930118560792
+now time: 7:43. Step 6585 of piece 42 of epoch 12, loss 1.670629529953003
+now time: 7:45. Step 6785 of piece 42 of epoch 12, loss 1.6708181023597717
+now time: 7:46. Step 6985 of piece 42 of epoch 12, loss 1.6257958841323852
+saving model for epoch 12
+epoch 12 finished
+time: 2025-09-22 07:47:23.507582
+time for one epoch: 0:41:51.611109
+epoch 13
+time: 2025-09-22 07:47:23.507891
+now time: 7:47. Step 20 of piece 79 of epoch 13, loss 1.655110251903534
+now time: 7:48. Step 220 of piece 79 of epoch 13, loss 1.5725522541999817
+now time: 7:49. Step 420 of piece 79 of epoch 13, loss 1.5311177158355713
+now time: 7:51. Step 620 of piece 79 of epoch 13, loss 1.5647754263877869
+now time: 7:52. Step 820 of piece 79 of epoch 13, loss 1.5980419969558717
+now time: 7:53. Step 1020 of piece 79 of epoch 13, loss 1.5797090363502502
+now time: 7:54. Step 1220 of piece 79 of epoch 13, loss 1.6183075380325318
+now time: 7:55. Step 1420 of piece 79 of epoch 13, loss 1.5864874839782714
+now time: 7:56. Step 1620 of piece 79 of epoch 13, loss 1.5646615815162659
+now time: 7:58. Step 1820 of piece 79 of epoch 13, loss 1.5527943420410155
+now time: 7:59. Step 2020 of piece 79 of epoch 13, loss 1.5862304615974425
+now time: 8:0. Step 2220 of piece 79 of epoch 13, loss 1.5803474807739257
+now time: 8:1. Step 2420 of piece 79 of epoch 13, loss 1.5928839945793152
+now time: 8:2. Step 2620 of piece 79 of epoch 13, loss 1.5926316952705384
+now time: 8:3. Step 2820 of piece 79 of epoch 13, loss 1.595090229511261
+now time: 8:5. Step 3020 of piece 79 of epoch 13, loss 1.5623394882678985
+now time: 8:6. Step 3220 of piece 79 of epoch 13, loss 1.5758144569396972
+now time: 8:7. Step 3420 of piece 79 of epoch 13, loss 1.5735310983657838
+now time: 8:8. Step 3620 of piece 79 of epoch 13, loss 1.5751222491264343
+now time: 8:9. Step 3820 of piece 79 of epoch 13, loss 1.604309732913971
+now time: 8:10. Step 4020 of piece 79 of epoch 13, loss 1.5717058300971984
+now time: 8:12. Step 4220 of piece 79 of epoch 13, loss 1.5930821561813355
+now time: 8:13. Step 4420 of piece 79 of epoch 13, loss 1.5996301198005676
+now time: 8:14. Step 4620 of piece 79 of epoch 13, loss 1.5809651041030883
+now time: 8:15. Step 4820 of piece 79 of epoch 13, loss 1.595816400051117
+now time: 8:16. Step 5020 of piece 79 of epoch 13, loss 1.561073920726776
+now time: 8:17. Step 5220 of piece 79 of epoch 13, loss 1.561516764163971
+now time: 8:19. Step 5420 of piece 79 of epoch 13, loss 1.6095002055168153
+now time: 8:20. Step 5620 of piece 79 of epoch 13, loss 1.583228759765625
+now time: 8:21. Step 5820 of piece 79 of epoch 13, loss 1.5698351287841796
+now time: 8:22. Step 6020 of piece 79 of epoch 13, loss 1.5816543745994567
+now time: 8:23. Step 6220 of piece 79 of epoch 13, loss 1.6017150449752808
+now time: 8:24. Step 6420 of piece 79 of epoch 13, loss 1.5825465369224547
+now time: 8:25. Step 6620 of piece 79 of epoch 13, loss 1.5544543659687042
+now time: 8:27. Step 6820 of piece 79 of epoch 13, loss 1.5655611181259155
+now time: 8:28. Step 7020 of piece 79 of epoch 13, loss 1.5636014747619629
+saving model for epoch 13
+epoch 13 finished
+time: 2025-09-22 08:29:10.765302
+time for one epoch: 0:41:47.257411
+epoch 14
+time: 2025-09-22 08:29:10.765460
+now time: 8:29. Step 55 of piece 85 of epoch 14, loss 1.5663477182388306
+now time: 8:30. Step 255 of piece 85 of epoch 14, loss 1.5476908659934998
+now time: 8:31. Step 455 of piece 85 of epoch 14, loss 1.4875537490844726
+now time: 8:33. Step 655 of piece 85 of epoch 14, loss 1.5065485906600953
+now time: 8:34. Step 855 of piece 85 of epoch 14, loss 1.4979580521583558
+now time: 8:35. Step 1055 of piece 85 of epoch 14, loss 1.4930608177185059
+now time: 8:36. Step 1255 of piece 85 of epoch 14, loss 1.5385849857330323
+now time: 8:37. Step 1455 of piece 85 of epoch 14, loss 1.5110412526130677
+now time: 8:38. Step 1655 of piece 85 of epoch 14, loss 1.5241102528572084
+now time: 8:40. Step 1855 of piece 85 of epoch 14, loss 1.5297859859466554
+now time: 8:41. Step 2055 of piece 85 of epoch 14, loss 1.5252746748924255
+now time: 8:42. Step 2255 of piece 85 of epoch 14, loss 1.5033121800422669
+now time: 8:43. Step 2455 of piece 85 of epoch 14, loss 1.5079088973999024
+now time: 8:44. Step 2655 of piece 85 of epoch 14, loss 1.5264502835273743
+now time: 8:45. Step 2855 of piece 85 of epoch 14, loss 1.5082588982582092
+now time: 8:47. Step 3055 of piece 85 of epoch 14, loss 1.4892848205566407
+now time: 8:48. Step 3255 of piece 85 of epoch 14, loss 1.50833434343338
+now time: 8:49. Step 3455 of piece 85 of epoch 14, loss 1.461177031993866
+now time: 8:50. Step 3655 of piece 85 of epoch 14, loss 1.5605953741073608
+now time: 8:51. Step 3855 of piece 85 of epoch 14, loss 1.5004190111160278
+now time: 8:52. Step 4055 of piece 85 of epoch 14, loss 1.5284722113609315
+now time: 8:54. Step 4255 of piece 85 of epoch 14, loss 1.5390352058410643
+now time: 8:55. Step 4455 of piece 85 of epoch 14, loss 1.5306141901016235
+now time: 8:56. Step 4655 of piece 85 of epoch 14, loss 1.5129210901260377
+now time: 8:57. Step 4855 of piece 85 of epoch 14, loss 1.5287051701545715
+now time: 8:58. Step 5055 of piece 85 of epoch 14, loss 1.5202104663848877
+now time: 8:59. Step 5255 of piece 85 of epoch 14, loss 1.5162092542648316
+now time: 9:1. Step 5455 of piece 85 of epoch 14, loss 1.53786780834198
+now time: 9:2. Step 5655 of piece 85 of epoch 14, loss 1.4952222275733948
+now time: 9:3. Step 5855 of piece 85 of epoch 14, loss 1.5188423466682435
+now time: 9:4. Step 6055 of piece 85 of epoch 14, loss 1.5120441234111786
+now time: 9:5. Step 6255 of piece 85 of epoch 14, loss 1.564357612133026
+now time: 9:6. Step 6455 of piece 85 of epoch 14, loss 1.5292729568481445
+now time: 9:7. Step 6655 of piece 85 of epoch 14, loss 1.482012711763382
+now time: 9:9. Step 6855 of piece 85 of epoch 14, loss 1.5199240612983704
+now time: 9:10. Step 7055 of piece 85 of epoch 14, loss 1.5316363716125487
+saving model for epoch 14
+epoch 14 finished
+time: 2025-09-22 09:10:56.619474
+time for one epoch: 0:41:45.854014
+epoch 15
+time: 2025-09-22 09:10:56.619551
+now time: 9:11. Step 90 of piece 22 of epoch 15, loss 1.4742408418655395
+now time: 9:12. Step 290 of piece 22 of epoch 15, loss 1.4507334780693055
+now time: 9:13. Step 490 of piece 22 of epoch 15, loss 1.4717933440208435
+now time: 9:14. Step 690 of piece 22 of epoch 15, loss 1.4686670041084289
+now time: 9:16. Step 890 of piece 22 of epoch 15, loss 1.4697392106056213
+now time: 9:17. Step 1090 of piece 22 of epoch 15, loss 1.4635005903244018
+now time: 9:18. Step 1290 of piece 22 of epoch 15, loss 1.4932567262649536
+now time: 9:19. Step 1490 of piece 22 of epoch 15, loss 1.4929405665397644
+now time: 9:20. Step 1690 of piece 22 of epoch 15, loss 1.4585341310501099
+now time: 9:21. Step 1890 of piece 22 of epoch 15, loss 1.467617518901825
+now time: 9:23. Step 2090 of piece 22 of epoch 15, loss 1.4715097403526307
+now time: 9:24. Step 2290 of piece 22 of epoch 15, loss 1.522042350769043
+now time: 9:25. Step 2490 of piece 22 of epoch 15, loss 1.4911041617393495
+now time: 9:26. Step 2690 of piece 22 of epoch 15, loss 1.457293906211853
+now time: 9:27. Step 2890 of piece 22 of epoch 15, loss 1.5051076054573058
+now time: 9:28. Step 3090 of piece 22 of epoch 15, loss 1.455471738576889
+now time: 9:30. Step 3290 of piece 22 of epoch 15, loss 1.4829485535621643
+now time: 9:31. Step 3490 of piece 22 of epoch 15, loss 1.4642126774787902
+now time: 9:32. Step 3690 of piece 22 of epoch 15, loss 1.4640378594398498
+now time: 9:33. Step 3890 of piece 22 of epoch 15, loss 1.4897162890434266
+now time: 9:34. Step 4090 of piece 22 of epoch 15, loss 1.4839390110969544
+now time: 9:35. Step 4290 of piece 22 of epoch 15, loss 1.473511927127838
+now time: 9:36. Step 4490 of piece 22 of epoch 15, loss 1.4567156147956848
+now time: 9:38. Step 4690 of piece 22 of epoch 15, loss 1.4946772384643554
+now time: 9:39. Step 4890 of piece 22 of epoch 15, loss 1.4575993347167968
+now time: 9:40. Step 5090 of piece 22 of epoch 15, loss 1.4746391201019287
+now time: 9:41. Step 5290 of piece 22 of epoch 15, loss 1.464499490261078
+now time: 9:42. Step 5490 of piece 22 of epoch 15, loss 1.4867242980003357
+now time: 9:43. Step 5690 of piece 22 of epoch 15, loss 1.4812181425094604
+now time: 9:45. Step 5890 of piece 22 of epoch 15, loss 1.4308880722522737
+now time: 9:46. Step 6090 of piece 22 of epoch 15, loss 1.4827614092826844
+now time: 9:47. Step 6290 of piece 22 of epoch 15, loss 1.461268002986908
+now time: 9:48. Step 6490 of piece 22 of epoch 15, loss 1.469536235332489
+now time: 9:49. Step 6690 of piece 22 of epoch 15, loss 1.4753341937065125
+now time: 9:50. Step 6890 of piece 22 of epoch 15, loss 1.4594352531433106
+now time: 9:52. Step 7090 of piece 22 of epoch 15, loss 1.4358399820327759
+saving model for epoch 15
+epoch 15 finished
+time: 2025-09-22 09:52:31.925969
+time for one epoch: 0:41:35.306418
+training finished
+
+(base) PS C:\ScottDocs\Codes\chinese-GPT2-start-from-zero>python generate.py   --device 0   --length 1000   --tokenizer_path cache/vocab_small.txt   --model_path model/final_model   --prefix "[CLS]韩立见此，便大笑起来"   --topp 1   --temperature 1.0 --save_samples --save_samples_path ./mnt/
+_path ./mnt/                                                                                                                                args:
+Namespace(device='0', length=1000, batch_size=1, nsamples=10, temperature=1.0, topk=8, topp=1.0, model_config='config/model_config_small.jso
+n', tokenizer_path='cache/vocab_small.txt', model_path='model/final_model', prefix='[CLS]韩立见此，便大笑起来', no_wordpiece=False, segment=False, fast_pattern=False, save_samples=True, save_samples_path='./mnt/', repetition_penalty=1.0)                                           100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:24<00:00, 40.81it/s]
+======================================== SAMPLE 1 ========================================
+
+韩立见此，便大笑起来，伸手从储物袋中掏出了一个早已准备好的木盒。第六百七十三章五行灵眼之泉“有了这只玉盒，韩道友先将盒中的东西拿出来。”韩立将
+盒盖打开，露出一对筷子来对于千娇百媚的少女，托着一个巴掌的玉盒。“这是？”紫灵仙子先是一怔，但马上露出喜色的问道。韩立听了微然一笑。“此盒和玉 盒并无其他宝物，但是对我来说却实在是珍稀之物，道友先看看盒中之物吧。”韩立伸手接过了那只白茸茸的玉盒，并不慌不忙的将盒盖打开，露出掩不住的笑 容。此盒不知是何物，竟是一种奇特的顶阶法器，黑白之极，两种颜色，也略显的美丽！“玉简中内容倒是和韩某一观！”韩立一眼就认出了盒中的盒子。紫灵仙子抿了抿嘴，嫣然一笑起来。韩立听了，没有客气接下，将盒盖打开，露出里面之物的样子。紫灵仙子先是一怔，但接着心神相连，但见韩立先是有些动容，但又一时沉吟了起来。“不错，这个玉盒是我一本奇缺之物，一种仙界早就失传数次使用的功法秘术，虽然没有一些，但绝对是最普通的一种功法。只是此物能让 我们修仙者大有用处。而且此法宝原先就是仙人的独有之物。只是此物一直无法收集到的，因此实在非同小可了。”韩立笑着解释道。“这玉简中，是晚辈无意中得到的一些法决，但可以让前辈从容说的。其它东西，我们都拿去吧。毕竟此物无法收集，只能用在普通玉简内安抚些法力，不用再多说什么的。”紫灵仙子略 一检查玉简中的内容，果然如此的说道。韩立听到这里，默然了一会儿后，也点了点头，将神识向后面扫了一遍。里面果然有一篇散发的妖兽内丹，对此丹效用并没有什么大用。紫灵仙子一见此景，顿时脸上浮现一丝兴奋之色。她虽然没有说什么，但也知道，这对妖丹是一种半对结丹期修士来说，根本是鸡肋之物。故而她虽然很想在这里，并没有多大的好处，就将此东西，直接扔了过去。韩立并没有将玉简接过，反而不慌不忙的将玉简接了过来，并从储物袋中取出了一本黄色玉简来，简中有些火热无比的样子。紫灵仙子一见韩立将玉简摄到手，心里大喜，立刻从玉简中将神识渗入了其中，略一查看后将额上的内容看了一遍。而韩立将神识沉浸了其中，并没有探查过。这玉简是她从那玉简内得到的另一本无名口诀。此女虽然有些不太一定的样子，但是一经查认后，也就明白了内容，并且一些修炼上的心得和信息有关，甚至还有一些研究里面东西的资料，也没有提及此事。韩立心中的思量一番后，就将此玉简从额上拿开，露出了复杂之色。“这 本书，是我在乱星海一处秘市中，收集来的功法。其中一部                                                                                        100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.60it/s] 
+======================================== SAMPLE 2 ========================================
+
+韩立见此，便大笑起来。“在下也不太清楚，这一路走吧！”韩立似乎不想再拖拉什么，一声大喝。一听韩立之言，寒骊上人和青衫老者更是不会有什么反对之意
+。于是韩立两手一抬，一只手掌直接向阵的某个方向轻轻一抓。顿时一道五颜六色的阵旗从手中激射而出一晃之下，阵旗竟幻化凝聚成一个直径数丈的巨大符阵，滴溜溜的在虚空中转动不停。顿时一股巨大吸力从符阵中心处喷射而出，那张巨大符阵竟一下将整座法阵包裹在了其中，而那只紫衫女子身前处，一个紫衫女子面无表情的站在那里，周身青光光耀目，身上隐隐有紫色符文在其中闪动不已。那青衫女子竟然施展了什么遁术，这实在让青衫女子一见之下，脱口叫出声来了。她虽然不知道韩立有何施展之法，但显然不敢肯定，脸色瞬间白起来。就在这时，青衫女子耳边响起了韩立的传音之声：“韩道，小心！我的青衫女子声， 竟然如此动静，不怕有人趁机挪动，还硬着头皮的直奔上，让我和青衫女子不死的死吧！”青衫女子一听此话，心里一怔，但随即冷笑的回道：“哼！我的灵术已经废了。这样也算了，道友既然还有法宝护身，又怎能奈何了我？”青衫女子听了这话，玉脂般的脸庞上突然浮现出一层不起眼的青蒙蒙的光罩出来，然后猛然 一跺足，化身为一道黄虹，向远处破空而去。第七百六十七章剑阵破阵大战（五）青衫女子自然不会让韩立去追，但眼见白虹就从远处破空而至，眼中寒光一闪，一抬手，一道白虹脱手飞出。此白虹方飞驰了十余里，一口光华闪动，一名青衫青年盘膝而坐，双手倒背。正是那位青衫女子。她脸带一丝古怪之色的注视着韩立消失方向，脸上隐现讥讽之色。“没想到，竟然还能碰到如此地步了。看来不用我多费手脚了。既然此人能找到了，自然就没有问题了。但是现在，我们可 没有多大把握，就此离开的路了。”韩立神色不变的说道。听了这话，青衫女子默然无语了。半晌后，她抬起首来望了望天空。只见远处天边，灵光一闪，露出 了一头数丈大小的怪异人。这人神识只有二十余丈之巨，左右两个肉翅挥动之下，无数肉翅同时攻出，青色电蛇闪烁，轰隆隆地在空中劈头盖脸的向这里飞来。“是你！”女子一见这人模样，不由得面露惊容，竟然露出一丝惊惧交加的神情。“阁下在何处，突然偷袭我们！”冰冷女子面上一丝厉色闪过，冷冷的说道。“哼 ！不用担心！我刚才只说一半就有如此厉害的法士，还来得及施展什么秘术。我们在这里施展神通，一个区区元婴中期修士，就能施展此法术。看来好像遁术中另有什么神通？”冰冷女子却似乎被此女动了心，冷冰冰冰                                                                                         100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:24<00:00, 40.14it/s]
+======================================== SAMPLE 3 ========================================
+
+韩立见此，便大笑起来。“这是小店铺中的最高级材料，其他材料是价值数百块灵石，但在内星海也是极其罕见的材料，只能卖到高阶灵石地。而且其他材料， 
+更不会有假？”许老怪在一旁连连的摇头，一边还给韩立解释的口气，似乎看出了韩立心中的几分其他材料。但韩立还是忍不住的问道：“不知韩某可以收购大量灵石，能否凑够材料？只要许老怪他答应和店铺中的其他材料，他更是一点不信的。”韩立摇了摇头，轻描淡写的回道。“呵呵，韩某有些不太放心！那就算了。这一块卖行，还是要再多块灵石，当做培育灵草最佳的报酬。”许老怪满意的说。“许兄如此爽快，这只是小事一桩而已，这笔交易可是想也不能换到的。毕竟我们灵界虽然有一笔灵石，但也不是什么顶阶的灵石都换取的。”韩立笑眯眯的说道，然后摸了摸桌上一个青光闪闪的玉盒放到了桌上，然后不客气的收了起来。 随后他一转身，就没入到了阁楼一层的大厅中。在这厅中坐着的一名灰袍老者，一见韩立和老者坐在主座上好一会儿后，终于开口说些什么。“不错，这位老夫 就先打开眼界了。”韩立嘴角一翘的说道。他刚想大话一出口，一只手掌蓦然冲老者一拍。“噗”一声闷响，老者手指一弹，竟一下击飞了出来。“噗”的一声，老 者体表一下浮现出一层晶莹光幕，将整间大厅照映的光幕都仿佛被一弹西开一般。韩立眉梢一挑，这才扫了一眼面，就点点头的说道：“原来是千前辈。这就可 以了。不过，在下还有些事情耽搁了。下面就开始交易吧。另外在此交易会的，也是道友专门出现了。其实这枚雷灵晶，是在下在在天渊城交易会上出现的。其余道友都已经收取了。”说完此话，老者又冲身旁的许老等人一招手，让其和其他几人一齐后，就自行离开了。看书院就来完了，话语声从空中传出。“道友不想要交换什么东西？”老者目光闪动几下后，问道。“前辈放心，在下也不过只能将灵晶当做交易而已，自然是求之不得的。但是我想先交换一种灵石，并非需要此物的重要。否则一定不会用到此物。”韩立淡淡的说道。“既然前辈如此说了，晚辈就将灵晶之灵晶拿出来。”老者略一沉吟后，就一口的答应下来。然后他也不 等对方再有何反对时，立刻单手一翻转下，手中蓦然多出一只淡白色玉匣，并往口中一抛。顿时玉匣表面灵光闪动，自行的打开了。一团金光闪动着各色光芒的禁制符篆，一下在光幕上空浮现而出、接着光芒一敛后，玉匣就此消失的无影无踪。韩立袖子冲其中一拂。一片青霞飞卷而出。玉匣盖一飞而开，但一股五色光霞从里面飞卷而出，将盖梁一卷而下后。玉匣就化                                                                                                100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.71it/s] 
+======================================== SAMPLE 4 ========================================
+
+韩立见此，便大笑起来。“呵呵，原来如此。这件事倒是我等人族的荣幸。不过那头魔鳄，我等只要一头扎进此城中，就足以应付你们人族了。”银发老者大喜的
+说道。“那是我多嘴了，这也是，无法拿到此物。不过放心。此事事颇为难办一番，一会儿也要尽快解决的。”一旁的银月，眸光一闪下，也lu出了一丝喜se来。“这个是自然的事情。那魔鳄纵然有些神通，我等又如何可能没发觉的。”其他几名魔尊也同样一一口的赞同道。银发老者点点头，就不再说什么了。这一次，韩立等人自然没有反对的意思了。当即他们几人在城中各自取出一叠阵旗，开始布置起一个法阵来。一层层法阵，足有上百座之多的样子。韩立等人一一布置完后，就将法阵一收而起，接着一一只手掌往身前一放后，一只手掌闪电般的虚空一抓。轰鸣声一响！五根圆柱表面一下浮现而出，然后一聚下，竟瞬间化为了一座十几丈高的五se圆环。韩立只觉身躯一麻，四周景se蓦然一个模糊，无数法明眸一睁而开，并lu出一丝若有所思的表情。“法阵，你们二人先到我要的一个地步 ，一同下去。”韩立一声低喝后，所化巨掌五指一紧，竟五指一握的冲圆环狠狠拍去。“砰”的一声。圆环表面霞光万道，竟瞬间的被其凭空吸了去，一下将其包 裹进了其中。韩立这一手掐诀，背后金光一闪之后，竟凭空的凝结出一口十余丈长的金se巨剑，足有十余丈长，剑光闪闪，正好将韩立几个闪动的龙影全都一斩两半。这五人每一寸地方，剑光奇薄无比，但是一个个寒光流转不定，连附近虚空都被一股无法抵挡的巨力一击而碎，根本无法奈何这金se巨剑的巨剑，只能无奈的接了下来。而就这片刻耽搁，金甲大汉单手一掐诀，身形竟一个模糊的在原处消失不见了。下一刻，五se云环在一股巨力一压之下，终于在一股巨力下，重新在四周浮现而出，但是一个闪动下，就一下出现在了下一处虚空中，并毫不犹豫的狠狠一落而下。一声地动山摇的巨响！金se巨剑瞬间碎裂而开。韩立身影在五指一敛消失后，才重新显lu而出。下一刻，一个数丈大的庞然大物从中徐徐落下，身躯前赫然现出一头丈许大的金se巨蟾。此蟾鹿首金光灿灿，五六十岁，面容和韩立一般无二，但身躯却是一颗金se头颅和一个三头六臂的模样，六条手臂微微一动下，一股五se光焰狂涌而出。巨大骨爪虚影尚未真的落下，附近虚空中就一阵嗡鸣般的嗡鸣传来！金se巨爪虚影一抓到光晕处，却一闪的凭空消失，但是五指间竟硬生生的从空中硬生生一抓而落。金se巨浪一个翻滚，五se霞光一卷，就将金se巨蟾虚影硬生生抓到了半空中。但就是这片刻耽                                                                                        100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.92it/s] 
+======================================== SAMPLE 5 ========================================
+
+韩立见此，便大笑起来。“这位韩道友，有些不妥吧！我想问一下，你可有什么印象？”南宫婉微然一笑，轻声的说道。“当然可以！我这里有一种很简单的方法 
+，但对这种印象颇为了解，你应该知不觉的。我当年曾经和婉儿约定过一番交往，才知道的。而你身上印象并非一般的古怪东西，也并非一般啊！”韩立不动声 色的说道。“这个倒是的，妾身怎可能真信的？”南宫婉有些惊讶的问道。“这种上古时候，夫君也亲自来查看一下。只是从其身上感觉上古文字来看，这种文字 可不是一般宝物。只不过这些文字如此古怪，也只能说是一种普通法器罢了。”韩立盯着南宫婉，平静说道。“上古时候，夫君曾经说过。只不过从上古时候，这种上古时候才偶尔学会的古文字，是用上古文字写，上面记载了上面的文字。”南宫婉凝望着韩立，眉头微皱的问道。“不认得？”韩立有些迟疑起来。“不错，我当年曾经亲自看过数界的典籍，并从上古典籍上看到一种古文字，但听说其中记载了一种叫“古文”的内容。”南宫婉有些迟疑地回道。“应该不假了。我这位夫君，当年竟是人界古时，从上古时候就一直独创的夫君口中得知的。这让妾身见到这种情形的男子，全都一般无二的。甚至在上古时候，我亲眼看到过有关上古时期的一些指点，对上古文字说的比起韩立来说，的确是大有来历的。但一些细腻无比的细针、细微的鸡蛋，不但蕴含着惊人的灵力，而且还会让人身体负担太大，真实质上说的含含糊不清。这种灵力，是一种蕴含天地生之力的至阳不可思议的灵力，让人身体受损害。而且不同的造诣还远超同阶修士修炼此法体。在修炼上面不知什么原因，人人人皆知的事情。但凡是被称为“灵气术”之人称为修炼之人，并且远非普通修士可比的。故而这些法术之人，基本上都会修炼法诀，而且因为法力低微，到了一定程度上有限的。而这种法术的修士，就是修炼法力深厚才可以达到一步的人，而且修炼此法术的人还可以说是低劣之极。当然，这是因为凡人虽然不像我们凡人可以做的这般感觉，但是修炼之人却远不如他，根本没有灵根能力可言加以修炼。只要修炼了此法术，这些凡人就可以修习此法术了。但如此看来，即使修为停滞不前的修士，能够施展此法术，那也是同样的事情。但如此低阶修士来的修炼法术，还是很难修炼此法术有成。”南宫婉轻声的解释 道。韩立点点头，不再说什么了。他知道，以前在乱星海这种地方来修炼此术的。因为此法术的容纳修士虽然不少，但是这法术的可不是一无二的啊！而且他自从来没有想过，南宫婉也是低阶修士的可能。否则                                                                                                100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.68it/s] 
+======================================== SAMPLE 6 ========================================
+
+韩立见此，便大笑起来。“多谢前辈厚爱赐！”韩立口中称谢，并从储物袋中掏出一个巴掌大小的玉盒，递给了对方。“好了，你先下去吧。此事想来你也不想多 
+说什么，就随我来找我。我正在洞府闭关修炼之，一直在修炼的。”韩立随手将玉盒接过，淡笑的吩咐道。“是，主人！”银月恭敬的应了一声，就接过玉盒，恭 声的将盒盖打开。韩立不慌不忙的走出了石室，在门外的一座无名小山后，盘膝而坐，并没有说话一句。一盏茶工夫后韩立出现在了洞府大门处，目光闪动两下后，才将神识从其中一散而出。“韩前辈，这次将洞府放出来，可是我等从大长老口中得知，现在已经知道小灵天不离十余月了。前辈是否将洞府修炼至大乘， 晚辈这一次能否给小姐一个惊喜。”银月站起身来，轻声的说道。韩立点点头，不再说什么的走进了密室中的密室中。单手拿着一块闪动红色玉简，在一块蒲团 上一动不动起来。韩立目光在玉简上一扫后，点点头的说道：“这个请前辈放心，有什么事情尽管吩咐就是了。”随后他想了一想后，伸手将玉简一把抓在了手中，神识沉浸其中不动起来。片刻后，韩立将神识从玉简中抽出，将玉简一把抓到了手中，用神念一扫其中一探后，眉梢微微一挑。“果然和以前一样，还要再等 数年的时间了吧。这一次，我会将神念浸泡的各个地方都查看一遍，并且从里面说，似乎是一个很罕见的洞府之地东西。这个玉简，你可懂得到一本叫做红罗仙酒的仙酒，是否有资格在里面？”韩立将玉简拿到手中，将玉简往额头上一贴，眉头微微一皱后，又向那红晕明尊直接扫了一眼。“真有些麻烦了！这里虽然不是仙人之物的。但也可能只有仙人才能得此灵酒！”银月在韩立神念一扫旁边的火，也有些讶然的说道。“这里的一切，妾身还真不太清楚。只是喜欢饮一杯的话，我这里还有几杯的。”韩立笑了一笑，将玉简往桌上一放，神念往其中一扫后，脸上就露出了一丝笑容。“好了，韩道友将圣斋带在了洞府后，在那里暂时居住一段时间了”银月嫣然一笑的说道。“那就有劳韩道友了。”韩立不置可否的回了一句后，人就一抱拳的踏入密室中。密室中，韩立坐在了蒲团上，神念四下飞快扫 过后，脸上却闪过诧异的表情。火月和朱果儿则站在一侧，并未交谈什么。“韩兄看来你对红罗果颇感兴趣。妾身虽然在一个月中待了数月之久，但自问在修为 上也远不是一般的灵酒。否则一旦失效，恐怕整个魔界都不会轻易放弃的。”韩立微笑的冲赤须老者说道。“不过在此之前，妾身又有些事情要向仙子多照应的。不过妾身虽然知道仙界大乘存在，但也有仙人能够                                                                                                100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.82it/s] 
+======================================== SAMPLE 7 ========================================
+
+韩立见此，便大笑起来，冲少了拱手。“韩道友不必客气，妾身只是随口一说罢了。这里不是说话之地。道友尽管开口就是。”“在下当初到此地时候一点。还不 
+知晓了。我和梅姑娘一定要再回洞府一叙。”韩立从容地说出了这么一句话。少妇虽然不知对方是否有兴趣。但一听少妇此言。却不在意地一笑。“既然道友如此说了。在下自然不会勉强的。不过。韩兄若是不嫌弃的话。就直接过去看看吧。”少妇嫣然一笑。明眸流转。嫣然一笑地说道。韩立见此，微微一笑，同样跟了 过去。一小会儿工夫后，韩立二人先在少妇地恭送下，并亲自送二人进了屋子。说起来，他虽然对少妇的一些事情了解，但是毕竟韩立先前和这二人一样，根本无法交流地。二人自然不好再提及此事，将韩立引出了彩流罂等人。于是，三人在屋子中略一盘旋后，突然来到了少妇住处。“道友且慢。我也准备一下。这位 小梅姑娘。不知是否听说过”“韩立”地名字。让人惊愕地一幕出现了。三人目光向屋外一扫。结果三人在屋中一间石室内，一间石室内静静地坐下。三人到处空 荡荡的，除了几张桌椅外，一个人影也没有。这让韩立有些意外。“韩兄，这是何意？”少妇一怔，马上含笑问道。“韩某在一旁稍候一二。就知道此事，是否还 有什么关系？“少妇抿嘴一笑，轻描淡写的说道。“呵呵，道友此言倒是真的，这次我也是受益匪浅啊！”韩立微微一笑，颇有几分自得的说道。“韩兄若想知道，妾身这次来，也算是一个惊喜的数日前了。”少妇闻言笑了起来，手腕一抖，将桌上的一个木盒全都稳稳打开。接着，他从容的坐了起来。“这里就是道友的洞府，韩某先坐下了!”韩立不动声色的说道。“妾身多谢道友相让了。在下先前听说小姐是小姐一个外人，不知可否给韩兄介绍一二。”少妇起身来，冲韩立嫣然一笑。“原来真是小女子，这就是小妹引起的。“韩某有礼了。”韩立不置可否的点下头，就大模大样的坐在了桌子上。少妇目光一闪的落到了少妇身上。这才一直跟 着小厮走了过来。“这位前辈到此，难道有事情相问不成？”少妇一见韩立过来了，心中微惊，面上不动神色。虽然她对韩立这般表现还不以为意，但是看出韩立的灵根属性并不在意。当即一言不发的单手往盒中一模。“嗖”的一声，盒盖被一层蓝霞包裹，直接打开了。里面一个数寸大小的淡红色玉简。一片白霞光冲天而起，一股精纯之极的灵气扑面而来。少妇抬手将玉简一把抓住，并一翻转身下，用皓腕一抖的将玉简吸到了手中。韩立用神念往其中一扫，脸上闪过一丝意外。“这个玉简中的东西，应该不假了。”，                                                                                                          100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.77it/s] 
+======================================== SAMPLE 8 ========================================
+
+韩立见此，便大笑起来，一拱手的说道：“在下万骨真人想要的那样东西，就请这位前辈过去一叙！”“不是，只是这位前辈而已，晚辈恐怕要好好招待一二了！”
+韩立说着说着，就把从储物袋中摸出了一件碧绿色的玉佩，递给了老者。老者面露喜色的接过此物，低头看了看手中的玉佩。“这是我一位朋友，这位韩前辈是 否还要招呼，晚辈一定尽力就是。”老者见韩立有些迟疑，急忙拿出一块玉佩对准的石壁扔到了韩立面前，然后客气的说道。韩立一怔，接过玉佩仔细的望了老 者的面容，一点没敢相信此言。老者见到此幕，微一怔，有些惊讶的说道：“这是我天道盟的韩前辈，前辈是不是也天资过人，前辈没看错吧！”“晚辈的确是过 天道盟修士。前辈是人族万妙盟的长老，以后也有过晚辈的洞府，亲自请前辈过去一叙如何？”韩立随意的一问。但老者听了这话，却出乎意外的回道：“不错，就是天道盟的同道盟。韩前辈若是肯加入天道盟，自然会小心翼翼的。”“呵呵，这是老夫糊涂的事情。不过，这位前辈请进吧！”老者听了韩立这话一惊，急忙 施礼说道。韩立点点头，不再迟疑的用玉佩接了过去。老者并未阻止韩立，而是用玉佩戴面具，而是谨慎的将面具摆放在了韩立面前，让其看了心里微微一动。韩立见此，不敢怠慢的急忙说道：“既然前辈如此说了，晚辈这就带路了。不知前辈为何一定向晚辈求救。”韩立将玉佩戴在了身上，才将身上的储物袋一拿而开，露出了一面铭印一些淡红色的玉佩。老者见到此幕，心里一喜，当即恭谨的连施礼。这玉佩是他昔年在天星城的一种玉佩上得到的，如今的韩立修为竟也凝进了筑基中期，真是不可思议之事了。“原来是韩前辈到访，请前辈稍候一二。”老者方一靠近，就恭敬的说道。随后，韩立将玉佩一收，向老者二人轻飘飘的落了下来。老者二人也没有客气的当即招呼韩立二人，就化为一道青虹直奔天星城而去。韩立见此，也没有客气的紧随他们而走。不过在路上，韩立目光在那高瘦法士身上一扫后，眉头不经意的皱了一下，随即又向另一座山峰飞去。“你们是天星宗执法修士！”“这位前辈是？”韩立略有些意外，但转身想了一下，有些不太肯定的问道。“是在下的这位前辈，姓韩的是贵宗的韩立前辈？”老者没有开口的意思。虽然韩立不知道对方是何来历，但是看对方的修为后，又怎敢小瞧，当即满口的答应一声。“嘿嘿！道友既然是外人，为何会有如此大神通的？”韩立打了个哈哈，微笑的说道。“我姓韩，是韩前辈门下的姓名，是在下的一位远亲的同胞 兄弟，前辈认识？”老者虽然声音平平淡，                                                                                                       100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.65it/s] 
+======================================== SAMPLE 9 ========================================
+
+韩立见此，便大笑起来，一副诚惶的样子。但他没有记错的话，对方的这番施，可真对他的确是个大不利的事！第二百五十三章“韩立”虽然心里不高兴，但也知
+道自己这位韩师叔会不会把自己弄丢，毕竟对方也是个千竹教的人。只能说这是一种人的无奈之心，韩立自然无语了。“呵呵！师侄这是真心的。不过，师侄的 这粒筑基丹就行了，师叔我还真是佩服啊，这还真是太好了！”胖子自称是着，连忙开口解释道。韩立听了，暗自苦笑不已！不过表面上，他还是摇了摇头后， 对方说道：“既然师叔说了，韩师侄不妨跟我来，就先回师叔的住处休息一下吧！说起来，这里的口气还真是不错啊！”“呵呵！弟子还是要见见面！其实这是教 训的很！不过师侄的洞府，师叔我不可能拿自己的名誉！”这位雷万鹤师伯对韩立的好感大恩，很满意。“这是什么话，怎么能和人家斗得用这枚筑基丹，换下这筑基丹！难道师侄不是外人让我的东西啊！”韩立这番话说的滴水不露，让对方脸色微微一变。“不过，这位韩师侄的好徒弟我都知道不少啊，要是换取那筑基丹吗？师伯这里面应该有些东西要对筑基丹大有用处的，所以才有些奇怪，不怕师侄太大了，这筑基丹这不是也要大费周折了！”胖子眨了眨小眼，突然轻笑了一 声，说道。“呵呵！师伯的意思是？不是太引人注意的，师侄这边请师伯鉴定一下吧！”胖子一听韩立此话，立即喜笑颜开的说道。对韩立来说，这位雷万鹤师伯的心思是如此的，那他就更加了解不少！但是韩立可对这位雷师伯的好感，却不会纠缠自己。毕竟，他也是自己才到不起眼的地步。“好吧，这位韩师侄的确收 的很，和那位对在下的心目中，很是好奇。那还有一事，想和师伯讲一下师侄丹药之事，想和师伯交换些炼丹好的原料。”胖子开始听韩立如此一问，但还是提 出了要注意的神情。于是，这位雷万鹤恐怕和韩立在原地听完了此事，不禁笑了笑，一笑后就和道士说道：“弟子想好了，韩立这的大名鼎鼎的丹药，交予你和 两位师伯坊市的炼丹大师来处理。不过，为师伯也有些好奇，数量能够筑基成功的！”韩立听了说后，微微一笑。但随即就回头来了，还是说出了和他讨价的话 来。“炼丹大量的灵药，要求不少吧！其原料虽然没有配方，但是质量可不见的，其实却是对师侄这位韩师侄无比，很是好奇的。另外一样，就是师伯要一大批 灵丹炼器，来交换。”胖子开始听到韩立说起了灵草要买珍贵药，这位师伯的好处，他还真是头次听人说过。但话里的笑眯眯的又说道：“当然不会了，但是师侄这里的灵草，的确是有些珍稀罕的药材，其他丹方正好                                                                                            100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:25<00:00, 39.68it/s] 
+======================================== SAMPLE 10 ========================================
+
+韩立见此，便大笑起来。“不过，这位韩师侄的确是当年的一位旧识。师侄从小就和你提过的，倒也是大有可能的。但是你可曾经在一个古怪脾气的小师侄，从 
+未想过这么夸大，这是很正常的事情。”岳华仙子的脸上，露出一丝苦笑之色的说道，似乎大大大为的羡慕。“哦，难道我就知道了，韩师侄和那位吴仙师不是一对的？”青纹没有开口，一副老气横生的模样。“当然，如果不同了。那我们修仙者以前还曾经在岳麓殿见过，那时的其他仙师就更不用担心他了，不怕那位吴师侄了，还会如此轻松的招惹他们的。”青纹道士看向韩立的目光，有些自得的说道。韩立听了此话，脸上也露出一丝笑意，但心里却暗自庆幸不已。他还真多弄 几分来对同胞兄弟，可是关心大增！“这位吴仙师要好好好谈的，以后我就这样将诸位吴仙师请来，至于是否要偷窥我们。”青纹道士的脸上，升起了一片笑容，温和的说道。韩立脸上的笑容收敛了起来，不知这位吴仙师是什么意思。否则，他怎么也不会自己给这位胡乱猜测的。于是，青纹道士笑眯眯的把嘴一撇，就说道：“这位吴师伯，有些太晚辈事情要晚辈。在下只是随口一问罢了，想必也看看这位吴仙师还有什么特别的法器没有，就不知晓这位韩前辈是否还有兴趣？”韩立的话里，似乎完全忘掉了。青纹道士见韩立如此的恭谨了，心里不禁有些好笑。要是没，韩立不愿轻易的招惹。自己也不是对方对自己这位记名弟子的诚心太深，以后肯定会被人追杀到哪里去。于是韩立强打精神的一句话，就把一切意思都讲了出来，然后神色自如的讲了一句话出来。青纹道士听了韩立的话，神色淡然，并未开口说什么。而那位吴仙师开口的笑声中，也开始讲解道：“这位韩仙师的神通惊人，还是知道一些和青纹前辈有关的。不过，我们这些仙师都是知道 的。那些和青纹道士的事情，我一定要见识一些散修的！”“既然这样，青纹道长的话，就由在下给吴仙师见下一个讲解的。我们可以给韩仙师解释一二的。”韩 立听了此话，并未有动怒。他虽然对这位吴仙师还是有些忌惮的，但是青纹道士，只是挠了挠头皮，就无所谓的答应了。青纹道士见此，也不客气，就一同坐到了那里。“这个，青纹道长说这是仙师的吧？”青纹道士不动声色的问道。“我们青纹道长和吴九死一场了，还是胡乱聊天！”吴九指着韩立，似乎对青纹道士非常满意的样子。韩立笑了笑，和颜悦色的对吴九指并不在意，只是说：“我们青纹道长，青纹道长的修仙者功法还是有几层的，这些仙师就不要怪我们了。”这青纹道士倒也和气的很识趣。让韩立有点意外，就连吴                                                                                                ================================================================================
